@@ -24,7 +24,7 @@ List SimpLinCpp(NumericVector x, NumericVector y) {
   double sse = sum(residuals * residuals); //sum of squared residuals
   double s2 = sse / (n - 2);
   double var_beta1 = s2 / x_mean2_sum;
-  double var_beta0 = s2 * (1 / n + x_mean * x_mean / x_mean2_sum);
+  double var_beta0 = s2 * (1 / n + (x_mean * x_mean) / x_mean2_sum);
   
   double se_beta1 = sqrt(var_beta1);
   double se_beta0 = sqrt(var_beta0);
