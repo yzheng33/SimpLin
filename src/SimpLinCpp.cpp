@@ -6,9 +6,11 @@ using namespace Rcpp;
 List SimpLinCpp(NumericVector x, NumericVector y) {
   int n = x.size();
   double x_sum = sum(x);
+  double x_mean = mean(x);
   double y_sum = sum(y);
   double xy_sum = sum(x * y);
   double xx_sum = sum(x * x);
+  double x_mean_sum = xx_sum - n * x_mean * x_mean;
   
   // Compute estimated coefficients
   double beta1 = (n * xy_sum - x_sum * y_sum) / (n * xx_sum - x_sum * x_sum);
@@ -21,8 +23,8 @@ List SimpLinCpp(NumericVector x, NumericVector y) {
   // Compute the variance and standard errors
   double sse = sum(residuals * residuals); //sum of squared residuals
   double s2 = sse / (n - 2);
-  double var_beta1 = s2 / (n * xx_sum - x_sum * x_sum);
-  double var_beta0 = s2 * (1.0 / n + x_sum * x_sum / (n * xx_sum - x_sum * x_sum));
+  double var_beta1 = s2 / (xx_sum - n * x_mean * x_mean);
+  double var_beta0 = s2 * (1 / n + x_mean * x_mean / (xx_sum - n * x_mean * x_mean));
   
   double se_beta1 = sqrt(var_beta1);
   double se_beta0 = sqrt(var_beta0);
