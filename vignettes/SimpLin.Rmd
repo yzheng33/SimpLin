@@ -1,0 +1,48 @@
+---
+title: "SimpLin"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to SimpLin}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(SimpLin)
+```
+
+
+# Description
+
+`SimpLin` is an R package for performing simple linear regression analysis. It provides estimated regression coefficients, corresponding standard errors and 95% confidence intervals, residuals, and predicted values as a list.
+
+# Usage
+
+```{r eval=FALSE, include=TRUE}
+result <- SimpLinR(x, y)
+```
+
+# Arguements
+
+- `x`: A numeric vector representing the independent variable.
+- `y`: A numeric vector representing the dependent variable. It must have the same length as `x`.
+
+# Examples 
+
+This is a basic example that demonstrates how to use the `SimpLinR` function with simulated data:
+
+```{r example}
+# Simulated data
+x <- 1:100
+y <- 2 * x + rnorm(100, mean = 0, sd = 20)
+
+# Running the simple linear regression
+result <- SimpLinR(x, y)
+
+# Viewing the results
+print(result)
+```

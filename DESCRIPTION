@@ -1,0 +1,18 @@
+Package: SimpLin
+Type: Package
+Title: Simple Linear Regression Model Estimates
+Version: 1.0
+Date: 2024-01-30
+Author: Yao Zheng
+Maintainer: Yao Zheng <yao.zheng@colostate.edu>
+Description: Outputs estimated regression coefficients, corresponding standard errors and 95% confidence intervals, residuals, and predicted values as a list.
+License: GPL (>= 2)
+Suggests: 
+    knitr,
+    rmarkdown,
+    tinytest
+Encoding: UTF-8
+RoxygenNote: 7.3.1
+Imports: Rcpp (>= 1.0.12)
+LinkingTo: Rcpp, RcppArmadillo
+VignetteBuilder: knitr
