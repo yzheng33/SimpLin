@@ -5,19 +5,3 @@ SimpLinCpp <- function(x, y) {
     .Call(`_SimpLin_SimpLinCpp`, x, y)
 }
 
-rcpparma_hello_world <- function() {
-    .Call(`_SimpLin_rcpparma_hello_world`)
-}
-
-rcpparma_outerproduct <- function(x) {
-    .Call(`_SimpLin_rcpparma_outerproduct`, x)
-}
-
-rcpparma_innerproduct <- function(x) {
-    .Call(`_SimpLin_rcpparma_innerproduct`, x)
-}
-
-rcpparma_bothproducts <- function(x) {
-    .Call(`_SimpLin_rcpparma_bothproducts`, x)
-}
-
