@@ -28,7 +28,7 @@ List SimpLinCpp(NumericVector x, NumericVector y) {
   double se_beta0 = sqrt(var_beta0);
   
   // Compute the 95% confidence intervals
-  double z = 1.96; // Approximate value for 95% confidence
+  double z = R::qt(0.975, n-2, true, false); // Approximate value for 95% confidence
   double ci_beta1_low = beta1 - z * se_beta1;
   double ci_beta1_high = beta1 + z * se_beta1;
   double ci_beta0_low = beta0 - z * se_beta0;
